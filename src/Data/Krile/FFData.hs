@@ -14,14 +14,6 @@ import Data.Krile.Sharlayan.News
 import Data.Krile.Sharlayan.FreeCompany
 import Data.Krile.Store
 
--- |Data type storing the successful or unsuccessful result of a character search
-data SearchResult = NotFound                    -- ^ No matches were found
-                  | SearchError String          -- ^ An error occurred during the search
-                  | ManyCharsFound [Character]  -- ^ More than one matches were found for the search
-                  | OneCharFound Character      -- ^ Exactly one character matched the search requirements
-                  | FcFound FreeCompany         -- ^ FC data was successfully parsed
-  deriving (Show)
-
 -- |Fetches a character from the lodestone and writes it to the data store given the name, world and config
 fetchCharData :: String -> String -> Config -> IO SearchResult
 fetchCharData name world conf
